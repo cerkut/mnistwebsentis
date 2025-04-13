@@ -1,20 +1,29 @@
-# mnistwebsentis
+# Escape Room Sample
+ 
+Escape room adventure showing how to integrate digit recognition into the gameplay loop.
 
-From Unity Sentis Examples. Uses classical github-pages build.
 
-Play the game at [https://cerkut.github.io/mnistwebsentis/](https://cerkut.github.io/mnistwebsentis/)
+![image info](./Documentation/main.png)
 
-In MNISTEngine.cs
+## Gameplay Idea
 
-```
-// This small model works just as fast on the CPU as well as the GPU:
-    static BackendType backendType = BackendType.CPU; // +BackendType.GPUCompute;+
-```
+We want a game where the player is stuck in a room and to escape they need to draw a code on a codepad.
 
----
+![image info](./Documentation/gameplay.png)
 
-  Banana       1
-  Strawberry   4
-  Watermelon   5
+## Runtime Inference
 
----
+To solve this problem we leverage a small Neural Network.
+
+It takes as input the code-pad texture.
+
+After running inference we get the most likely digit.
+
+We use this to feedback into the gameplay loop
+
+![image info](./Documentation/runtime-inference.png)
+
+
+##  Video Tutorial
+
+[![IMAGE ALT TEXT HERE](../Documentation/video-image.png)](https://www.youtube.com/watch?v=IofX0CAYdmU)
